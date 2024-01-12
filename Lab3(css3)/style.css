@@ -1,0 +1,110 @@
+.photo {
+    display: block;
+    width: 500px;
+    height: auto;
+    position: relative;
+    animation-name: opacity-out; 
+    animation-duration: 5s;
+}
+
+.photo:hover {
+    animation-name: opacity-in; 
+    animation-duration: 5s;
+}
+
+@keyframes opacity-in {
+    0% {
+        opacity: 1.0;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    75% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.0;
+    }
+}
+
+@keyframes opacity-out {
+    0% {
+        opacity: 0.0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+
+.button {
+    display: block;
+    margin-top: 200px;
+    margin-left: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #5e1867; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.button:hover {
+    animation: colorChange 5s infinite; 
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #5e1867;
+    }
+    25% {
+        background-color: #e74c3c;
+    }
+    50% {
+        background-color: #2ecc71;
+    }
+    75% {
+        background-color: #f39c12;
+    }
+    100% {
+        background-color: #3498db;
+    }
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 500px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Tektur', sans-serif;
+    font-size: 24px; 
+    color: black; 
+    text-shadow: 3px 3px 6px rgba(75, 25, 98, 0.8); 
+}
+
+
+
