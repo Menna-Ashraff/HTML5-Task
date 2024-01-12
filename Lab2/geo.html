@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation</title>
+</head>
+<body>
+    <h1>GeoLocation API...</h1>
+    <button style="display: block;" onclick="startWatch()">Get Location</button> <br>
+    <button onclick="clearWatch()">Clear Watch</button>
+
+    <script>
+        let watchLoc;
+
+        function startWatch() 
+        {
+            watchId = navigator.geolocation.watchPosition(showPosition)
+        }
+
+        function clearWatch() 
+        {
+            if (watchLoc) 
+            {
+                navigator.geolocation.clearWatch(watchLoc)
+                watchLoc = null
+            }
+        }
+
+        function showPosition(position) 
+        {
+            let lat = position.coords.latitude
+            let longt = position.coords.longitude
+
+             // --> Open in the same page
+            // location.assign("http://maps.google.com/maps?q=" + lat + ',+' + longt)
+
+            // --> Open in a new small window
+            console.log(lat, longt)
+            window.open("http://maps.google.com/maps?q=" + lat + ',+' + longt, "MapWindow", "width=600,height=400")
+        }
+    </script>
+</body>
+</html>
